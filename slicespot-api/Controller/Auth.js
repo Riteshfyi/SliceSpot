@@ -185,7 +185,8 @@ exports.logout = async (req, res) => {
     //  res.cookie("token", "", { expires: new Date(0), path: "/" });
       // res.cookie("token" , { expires: new Date(0), path: "/" });
       //delete if it doesnt work
-      res.cookie("token", "https://slicespot.vercel.app", { expires: new Date(0), path: "/" });
+      res.cookie("token", "", { expires: new Date(0), path: "/" });
+      // res.cookie.delete("token");
         
 
     res.status(200).json({
