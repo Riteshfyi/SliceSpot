@@ -109,9 +109,19 @@ exports.login = async (req, res) => {
       const options = {
         expires: new Date(Date.now() + 31 * 24 * 60 * 60 * 1000),
         httpOnly: true,
+        secure: true,
+         sameSite: 'None'
       };
 
-      // res.cookie("token", token, options)
+      // res.cookie("token", token, options)const options = {
+// expires:new Date(
+//   Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000 // calucate in milisec
+//   ),
+//   secure: true,//use this when the code is in production for https cookie request
+//   httpOnly:true,
+//   sameSite: 'None',//dealing with cross-site requests and the usage of third-party cookies
+//   };
+
       res.cookie("token", token, options).status(200).json({
         success: true,
         data: user,
