@@ -106,7 +106,9 @@ exports.login = async (req, res) => {
       user.password = undefined;
       user.name = undefined;
 
+       //remove domain from here , if it doesnt works.
       const options = {
+         domain: 'https://slicespot.vercel.app',
         expires: new Date(Date.now() + 31 * 24 * 60 * 60 * 1000),
         httpOnly: true,
         secure: true,
