@@ -196,6 +196,7 @@ exports.logout = async (req, res) => {
       const deleteOptions = {
         domain: 'https://slicespot.vercel.app',
         expires: new Date(0),
+        path: "/",
        httpOnly: true,
        secure: true,
         sameSite: 'None'
