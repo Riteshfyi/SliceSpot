@@ -197,7 +197,7 @@ exports.logout = async (req, res) => {
       const deleteOptions = {
 
         expires: new Date(0),
-        path: "/",
+      
        httpOnly: true,
        secure: true,
         sameSite: 'None'
