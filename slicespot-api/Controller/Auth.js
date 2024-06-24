@@ -180,9 +180,9 @@ exports.getAuth = (req, res) => {
 
 exports.logout = async (req, res) => {
   try {
-    if (req.cookies.token) {
-      res.cookie("token", "", { expires: new Date(0), path: "/" });
-    }
+    // res.cookie("token", "", { expires: new Date(0), path: "/" });
+      res.cookie("token" , { expires: new Date(0), path: "/" });
+    
 
     res.status(200).json({
       success: true,
