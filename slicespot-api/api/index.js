@@ -18,7 +18,7 @@ app.listen(PORT, () => {
 
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://slicespot.vercel.app",
   credentials:true
 };
 
