@@ -107,8 +107,9 @@ exports.login = async (req, res) => {
       user.name = undefined;
 
        //remove domain from here , if it doesnt works.
+               //  domain: 'https://slicespot.vercel.app',
       const options = {
-         domain: 'https://slicespot.vercel.app',
+
         expires: new Date(Date.now() + 31 * 24 * 60 * 60 * 1000),
         httpOnly: true,
         secure: true,
@@ -192,9 +193,9 @@ exports.logout = async (req, res) => {
       //res.cookie('token', '', { expires: new Date(0) });
 
       // res.clearCookie('token' , {domain:'https://slicespot.vercel.app' , path:'/'});
- 
+     // domain: 'https://slicespot.vercel.app',
       const deleteOptions = {
-        domain: 'https://slicespot.vercel.app',
+
         expires: new Date(0),
         path: "/",
        httpOnly: true,
