@@ -189,7 +189,10 @@ exports.logout = async (req, res) => {
       //
       //  res.cookies.delete("token");
         
-      res.cookie('token', '', { expires: new Date(0) });
+      //res.cookie('token', '', { expires: new Date(0) });
+
+      res.clearCookie('token');
+      
     res.status(200).json({
       success: true,
       message: "logged out successfully",
