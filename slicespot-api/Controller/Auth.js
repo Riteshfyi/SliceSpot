@@ -191,7 +191,18 @@ exports.logout = async (req, res) => {
         
       //res.cookie('token', '', { expires: new Date(0) });
 
-      res.clearCookie('token' , {domain:'https://slicespot.vercel.app' , path:'/'});
+      // res.clearCookie('token' , {domain:'https://slicespot.vercel.app' , path:'/'});
+ 
+      const deleteOptions = {
+        domain: 'https://slicespot.vercel.app',
+        expires: new Date(0),
+       httpOnly: true,
+       secure: true,
+        sameSite: 'None'
+     };
+
+     
+    res.cookie('token', '', deleteOptions);
 
     res.status(200).json({
       success: true,
