@@ -1,2 +1,2 @@
 
-export const URL = "http://localhost:3300";
+export const URL = "https://slice-spot-api.vercel.app/";
